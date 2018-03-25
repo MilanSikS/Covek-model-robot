@@ -1,0 +1,92 @@
+
+                                                                  KRETANJE ROBOTA U DESNO
+
+
+Grafikon primer:
+(DA BISTE LEPO VIDELI GRAFIKON IDITE NA MAXIMIZE NE KORISTITE WORD WRAP)
+
+LEFT                          R1                R2                       RIGHT
+<_ _ _ _ _ _ _ _ _ _ _ _ _ _ _._ _ _ _ _ _ _ _ _._ _ _ _ _ _ _ _ _ _  _  _  _>  STARTNA POZICIJA
+                               1 2 3 4 5 6 7 8 9 1 2 3 4 5 6 7 8 9 10 11 12 13
+							   
+							   
+LEFT					       R1               R2      RIGHT
+<_ _ _ _ _ _ _ _ _ _ _ _ _ _ _._ _ _ _ _ _ _ _ _._ _ _ _ _ _ _ _ _  _ _  _  _>  TRENUTAK KADA R1 NAILAZI NA MRLJU KOJU JE OSTAVIO R2(startna pozicija R2) U OVOM 
+                               1 2 3 4 5 6 7 8 9 1 2 3 4 5 6 7 8 9 10 11 12 13  PRIMERU TO JE NAKON 9 PREDJENIH POLJA U DESNO ILI 27 SEKUNDI
+							   
+							   
+							                     BOOFFFF
+LEFT							                     R1-R2      RIGHT
+<_ _ _ _ _ _ _ _ _ _ _ _ _ _ _._ _ _ _ _ _ _ _ _._ _ _ _ _ _ _ _ _  _  _ _  _  _  _  _  _> ROBOT R1 I R2 SUDARICE SE ZA 14 SEKUNDI OD KADA JE R1 NAISAO NA   
+                               1 2 3 4 5 6 7 8 9 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 MRLJU ROBOTA R2 ILI ZA 41 SEKUNDU OD STARTA
+
+						   
+Funkcije:
+R
+L
+R
+S
+G pocetak
+petlja:
+R
+G petlja
+
+1.Oba robota su krenula u isto vreme i krecu se po jedno polje u desno na svake 3 sekunde, sa instrukcijama D-L-D (desno-levo-desno) tj. 1 sek. po instrukciji.
+2.Svaki put nakon trece instrukcije vrsi se provera da li se robot nalazi iznad mrlje od ulja koju je ostavio neki od robota.
+  A)Ukoliko se NE nalazi iznad mrlje od ulja izvrsava se sledeca instrukcija G i vraca izvrsavanje programa na prvu instrukciju R.
+  B)Ukoliko se NALAZI iznad mrlje od ulja, preskace se sledeca instrukcija G koja vraca izvrsavanje programa na prvu instrukciju, i nakon toga se robot krece samo desno(poslenja instrukcija prebacuje program na pretposlednju instrukciju R).
+  
+Rezime:
+Kao sto je prikazano na primeru grafikona roboti krecu u isto vreme iz svojih startnih pozicija i krecu se po jedno polje u desno na svakih 3 sekundi, kada robot R1 stigne za 9 polja ili 27 sekundi do mrlje koju je ostavio robot R2 onda R1 pocinje da se krece samo desno i to 1 sekund po instrukciji i tako stize robota R2 za 14 sekundi od kada je naiso na mrlju koju je ostavio robot R2 ili za 41 sekundu od startne pozicije.
+
+
+
+
+                                                                   KRETANJE ROBOTA U LEVO
+
+
+
+Grafikon primer:
+(DA BISTE LEPO VIDELI GRAFIKON IDITE NA MAXIMIZE NE KORISTITE WORD WRAP)
+  
+
+LEFT                    R1          R2                       RIGHT
+<_ _  _ _ _ _ _ _ _ _ _ ._ _ _ _ _ _. _ _ _ _ _ _ _ _ _ _ _ _ _ _>  STARTNA POZICIJA
+11 10 9 8 7 6 5 4 3 2 1  6 5 4 3 2 1
+
+LEFT        R1          R2                                   RIGHT
+<_ _  _ _ _ _ _ _ _ _ _ ._ _ _ _ _ _. _ _ _ _ _ _ _ _ _ _ _ _ _ _>  TRENUTAK KADA R2 NAILAZI NA MRLJU KOJU JE OSTAVIO R1(startna pozicija R1) U OVOM PRIMERU TO 
+11 10 9 8 7 6 5 4 3 2 1  6 5 4 3 2 1                                 JE NAKON 6 PREDJENIH POLJA U DESNO ILI 18 SEKUNDI
+
+     BOOFFF
+LEFT R1-R2                                                   RIGHT
+ <_ _  _ _ _ _ _ _ _ _ _ ._ _ _ _ _ _. _ _ _ _ _ _ _ _ _ _ _ _ _ _>  ROBOT R2 I R1 SUDARICE SE ZA 9 SEKUNDI OD KADA JE R2 NAISAO NA MRLJU ROBOTA R1 ILI ZA  
+ 11 10 9 8 7 6 5 4 3 2 1  6 5 4 3 2 1                                 27 SEKUNDI OD STARTA
+ 
+ 
+ 
+Funkcije:
+L
+R
+L
+S
+G pocetak
+petlja:
+L
+G petlja
+
+
+
+1.Oba robota su krenula u isto vreme i krecu se po jedno polje u levo na svake 3 sekunde, sa instrukcijama L-D-L (levo-desno-levo) tj. 1 sek. po instrukciji.
+2.Svaki put nakon trece instrukcije vrsi se provera da li se robot nalazi iznad mrlje od ulja koju je ostavio neki od robota.
+  A)Ukoliko se NE nalazi iznad mrlje od ulja izvrsava se sledeca instrukcija G i vraca izvrsavanje programa na prvu instrukciju L.
+  B)Ukoliko se NALAZI iznad mrlje od ulja, preskace se sledeca instrukcija G koja vraca izvrsavanje programa na prvu instrukciju, i nakon toga se robot krece samo levo(poslenja instrukcija prebacuje program na pretposlednju instrukciju L).
+  
+Rezime:
+Kao sto je prikazano na primeru grafikona roboti krecu u isto vreme iz svojih startnih pozicija i krecu se po jedno polje u levo na svakih 3 sekundi, kada robot R2 stigne za 6 polja ili 18 sekundi do mrlje koju je ostavio robot R1 onda R2 pocinje da se krece samo levo i to 1 sekund po instrukciji i tako stize robota R1 za 9 sekundi od kada je naiso na mrlju koju je ostavio robot R1 ili za 27 sekundi od startne pozicije.
+
+
+
+ 
+
+
